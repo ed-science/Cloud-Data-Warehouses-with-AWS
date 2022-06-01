@@ -12,7 +12,7 @@ def load_staging_tables(cur, conn):
     """
     idx = 0
     for query in copy_table_queries:
-        print("Copying data into {}...".format(copy_table_order[idx]))
+        print(f"Copying data into {copy_table_order[idx]}...")
         cur.execute(query)
         conn.commit()
         idx = idx + 1
@@ -28,7 +28,7 @@ def insert_tables(cur, conn):
     """
     idx = 0
     for query in insert_table_queries:
-        print("Inserting data into {}...".format(insert_table_order[idx]))
+        print(f"Inserting data into {insert_table_order[idx]}...")
         cur.execute(query)
         conn.commit()
         idx = idx + 1
